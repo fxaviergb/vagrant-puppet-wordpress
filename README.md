@@ -9,33 +9,33 @@ The project is organized as follows:
 ```
 .
 ├── manifests/
-│   └── site.pp              # Main Puppet configuration file
+│   └── site.pp                         # Main Puppet configuration file
 ├── modules/
-│   ├── apache/              # Apache configuration module
+│   ├── apache/                         # Apache configuration module
 │   │   ├── manifests/
-│   │   │   └── init.pp      # Apache setup
+│   │   │   └── init.pp                 # Apache setup
 │   │   └── templates/
 │   │       └── virtual-hosts.conf.erb  # Virtual Hosts configuration template
-│   ├── mysql/               # MySQL configuration module
+│   ├── mysql/                          # MySQL configuration module
 │   │   ├── files/
-│   │   │   └── init-wordpress.sql  # SQL script to initialize WordPress database
+│   │   │   └── init-wordpress.sql      # SQL script to initialize WordPress database
 │   │   └── manifests/
-│   │       └── init.pp      # MySQL setup
-│   ├── php/                 # PHP configuration module
+│   │       └── init.pp                 # MySQL setup
+│   ├── php/                            # PHP configuration module
 │   │   └── manifests/
-│   │       └── init.pp      # PHP setup
-│   └── wordpress/           # WordPress configuration module
+│   │       └── init.pp                 # PHP setup
+│   └── wordpress/                      # WordPress configuration module
 │       ├── files/
 │       │   ├── redirect-to-latest-post.php  # PHP pluging file for WordPress
 │       │   └── sample-post-puppet.html      # Sample Post using HTML file
 │       ├── manifests/
-│       │   └── init.pp      # WordPress setup
+│       │   └── init.pp                 # WordPress setup
 │       └── templates/
 │           └── wp-config.php.erb  # wp-config.php configuration template
-├── .gitignore               # Git exclusion rules
-├── LICENSE                  # Project license
-├── README.md                # Project documentation
-└── Vagrantfile              # Vagrant configuration file
+├── .gitignore                          # Git exclusion rules
+├── LICENSE                             # Project license
+├── README.md                           # Project documentation
+└── Vagrantfile                         # Vagrant configuration file
 ```
 
 ## Configuration and Features
