@@ -1,7 +1,9 @@
 Vagrant.configure("2") do |config|
   config.vm.box = "bento/ubuntu-22.04"
 
+  # Configuración de red
   config.vm.network "forwarded_port", guest: 80, host: 8080
+  config.vm.network "private_network", ip: "192.168.33.10"
 
   # Configuración de recursos de la VM
   config.vm.provider "virtualbox" do |vb|
@@ -9,14 +11,11 @@ Vagrant.configure("2") do |config|
     vb.cpus = 2
   end
 
-  # Aprovisionamiento con Puppet y script inicial
+  # Aprovisionamiento con Puppet
   config.vm.provision "shell", inline: <<-SHELL
-    # Descargar e instalar el repositorio de Puppet para Ubuntu 22.04 (Jammy)
     wget https://apt.puppetlabs.com/puppet6-release-jammy.deb
     sudo dpkg -i puppet6-release-jammy.deb
     sudo apt-get update
-    
-    # Instalar Puppet Agent
     sudo apt-get install -y puppet-agent
   SHELL
 
